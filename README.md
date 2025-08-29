@@ -1,3 +1,3 @@
 # Mod3.DesarrolloDeSoftwareAplicadoACienciaDatos
 
-This is Tom just verifying why my git is not gitting lol 
+Okay, my git now is gitting lol, so I will make a second commit just to be sure
