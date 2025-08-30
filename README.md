@@ -36,5 +36,28 @@ Lastly, it is very important to verify the normalization by using (mean ≈ 0, s
 train_loader_norm = DataLoader(train_set_norm, batch_size=BATCH_SIZE, shuffle=False, num_workers=2, pin_memory=True)
 mean_norm, std_norm
 
+## Data Augmentation:
+A random horizontal flapping was implemented in order to apply augmentation only to the training set (not the test set).
+
+aug_transform = transforms.Compose([
+    transforms.RandomHorizontalFlip(p=0.5),
+    #anything else you may want to add is welcomed
+    normalize,
+])
+
+
+train_set_aug = datasets.CIFAR10(root=DATA_DIR, train=True, download=False, transform=aug_transform)
+len(train_set_aug)
+
+Augmentation helps by increasing the dataset diversity without collecting new data, presenting different parts of the data sert to train in a randomly manner in order to simulate new data presented in a real-world scenario. This way, overfitting is reduced, as we expose the model to varied examples each time as if it was the first time they were ever seen, and thus, improving model generalization.
+
+It is important to note, that for small images like CIFAR-10 (32×32), heavy augmentations should be used cautiously as they may remove too much semantic content or introduce unrealistic artifacts because of the pixel array dimentions.
+
+## Class Distribution Analysis:
+Fortunately, CIFAR-10 is perfectly distributed among classes, athough this will not always be the case, plots help and numbers help, so in order to see the distribution we:
+
+show class distribution
+show plot 
+
 
 
