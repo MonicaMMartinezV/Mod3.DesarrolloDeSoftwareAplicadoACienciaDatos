@@ -17,6 +17,7 @@ First, we set up reproducibility with 42 fixed random seeds for reproducibility,
 Then, the CIFAR-10 data set is downloaded using TorchVision's datasets module (base_transform = transforms.ToTensor()), and create a train and test splits..
 
 train_set = datasets.CIFAR10(root=DATA_DIR, train=True, download=True, transform=base_transform)
+
 test_set  = datasets.CIFAR10(root=DATA_DIR, train=False, download=True, transform=base_transform)
 
 ## Data exploration:
@@ -47,6 +48,7 @@ aug_transform = transforms.Compose([
 
 
 train_set_aug = datasets.CIFAR10(root=DATA_DIR, train=True, download=False, transform=aug_transform)
+
 len(train_set_aug)
 
 Augmentation helps by increasing the dataset diversity without collecting new data, presenting different parts of the data sert to train in a randomly manner in order to simulate new data presented in a real-world scenario. This way, overfitting is reduced, as we expose the model to varied examples each time as if it was the first time they were ever seen, and thus, improving model generalization.
@@ -57,6 +59,7 @@ It is important to note, that for small images like CIFAR-10 (32×32), heavy aug
 Fortunately, CIFAR-10 is perfectly distributed among classes, athough this will not always be the case, plots help and numbers help, so in order to see the distribution we:
 
 show class distribution
+
 show plot 
 
 
