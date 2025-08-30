@@ -27,19 +27,45 @@ First, it's important to see what we're working with before preparing our data f
 ## Normalization:
 Firstly it is important to note that a batch size was set in order to load and compute the training.
 
-It is extremely important to normalize the data we're working with, as this enables us to scale the data range to a standard scale, ensuring that all date have a comparable scale to one another, specially if we have different lenghths, which is fortunately not the case this time. This way we ensure that larger values don't dominate the training process. The normalization equation used was:
+It is extremely important to normalize the data we're working with, as this enables us to scale the data range to a standard scale, ensuring that all data have a comparable scale to one another, specially if we have different lenghths, which is fortunately not the case this time. This way we ensure that larger values don't dominate the training process. The normalization equation used was:
 
 ```math
+
 X norm = X - min(X) / max(X) - min(X)
+
+```
+```python
+normalize = transforms.Normalize(mean=mean.tolist(), std=std.tolist())
+
+train_transform = transforms.Compose([
+    transforms.ToTensor(),
+    normalize,
+])
+
+test_transform = transforms.Compose([
+    transforms.ToTensor(),
+    normalize,
+])
+
+train_set_norm = datasets.CIFAR10(root=DATA_DIR, train=True, download=False, transform=train_transform)
+test_set_norm  = datasets.CIFAR10(root=DATA_DIR, train=False, download=False, transform=test_transform)
+
+len(train_set_norm), len(test_set_norm)
 ```
 
-This equation computes per-channel mean and standard deviation from the training set using calculated statistics. 
+This equation computes per-channel mean and standard deviation from the training set using calculated statistics. After normalizing, we geta size of:
+
+(50000, 10000)
+
 
 Lastly, it is very important to verify the normalization by using (mean ≈ 0, std ≈ 1) by using DataLoader from the previusly installed library torch.utils.data:
 ```python
 train_loader_norm = DataLoader(train_set_norm, batch_size=BATCH_SIZE, shuffle=False, num_workers=2, pin_memory=True)
 mean_norm, std_norm
 ```
+
+After post-normalization means and stds, the printed result should be close to [0,0,0] and [1,1,1]. (If small deviations are showed, there shouldn't be a problem.
+
 ## Data Augmentation:
 A random horizontal flapping was implemented in order to apply augmentation only to the training set (not the test set).
 ```python
