@@ -1,8 +1,5 @@
 # Mod3.DesarrolloDeSoftwareAplicadoACienciaDatos
 
-Okay, my git now is gitting lol, so I will make a second commit just to be sure
-
-
 # Overview:
 This notebook provides a comprehensive guide to preparing the CIFAR-10 dataset for deep learning tasks using PyTorch. It covers the essential steps of data loading, exploration, normalization, and augmentation that are crucial for effective model training.
 
