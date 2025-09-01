@@ -1,5 +1,11 @@
 # Mod3.DesarrolloDeSoftwareAplicadoACienciaDatos
 
+## Team Members: 
+- A01027715 - Ulises Orlando Carrizalez Lerin
+- A01028008 - Tomás Pérez Vera
+- A01799609 - Bárbara Paola Alcántara Vega
+- A01710965 - Mónica Monserrat Martínez Vásquez
+- A01705840 - María José Soto Castro
 ## Overview:
 This notebook provides a comprehensive guide to preparing the CIFAR-10 dataset for deep learning tasks using PyTorch. It covers the essential steps of data loading, exploration, normalization, and augmentation that are crucial for effective model training.
 
