@@ -40,6 +40,6 @@ This repository contains multiple notebooks that explore the application of PyTo
     - Class 3: Background (ignored for analysis)
 
 ## Report
-- `report.pdf` is a detailed report in which we describe in a precise way all the data transfomrations and decissions taken in order to prepare a given data set to be loaded into a machine learning model. 
+- `Report-Activity-CIFAR10-Data-Preparation.pdf` is a detailed report in which we describe in a precise way all the data transfomrations and decissions taken in order to prepare a given data set to be loaded into a machine learning model. 
 
-- `Image segmentation for COVID-19 CT scans` is a complete technical report of the COVID-19 segmentation baseline, covering preprocessing, dataset preparation, model training, evaluation, and submission.
+- `Image segmentation for COVID-19 CT scans.pdf` is a complete technical report of the COVID-19 segmentation baseline, covering preprocessing, dataset preparation, model training, evaluation, and submission.
